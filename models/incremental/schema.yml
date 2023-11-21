@@ -1,0 +1,14 @@
+
+version: 2
+
+models:
+  - name: dbt_touched_issues_counter
+    description: "An incremental dbt model to count touched issues."
+    columns:
+      - name: date_hour
+        description: "The hour of events."
+        tests:
+          - unique
+          - not_null
+      - name: issues_touched
+        description: "The number of touched issues."
